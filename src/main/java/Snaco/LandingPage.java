@@ -29,6 +29,9 @@ public class LandingPage extends AbstractComponent{
 	
 	@FindBy(css="[class*='flyInOut']")
 	WebElement errorMessage;
+
+	@FindBy(css=".btn1")
+	WebElement registerButton;
 	
 	public ProductCatalogue loginApplication(String email,String password) {
 		
@@ -50,5 +53,10 @@ public class LandingPage extends AbstractComponent{
 		
 		waitForWebElementToAppear(errorMessage);
 		return errorMessage.getText();
+	}
+
+	public void newRegistration() {
+
+		registerButton.click();
 	}
 }
